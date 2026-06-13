@@ -89,7 +89,7 @@ def train(args=get_args()):
     env = gym.make(args.task)
     """
     Here we use our own implementation of qlearning_dataset for mbrl algos.
-    This is because for the d4rl.qlearning_dataset, it will take the obs[i+1] as the next obs,
+    This is because for the minari.qlearning_dataset, it will take the obs[i+1] as the next obs,
     which though has no effect for q learning but leads bug for dynamics learning.
     However, I can only ensure our new implementation works well on Mujoco. I don't test it on other tasks like Antmaze.
     Therefore, I suggest you to use the original impl if you run those tasks.

@@ -51,10 +51,10 @@ Detailed logs can be viewed in <https://drive.google.com/drive/folders/11QHHDlLm
 ## Installation
 First, install MuJuCo engine, which can be download from [here](https://mujoco.org/download), and install `mujoco-py` (its version depends on the version of MuJoCo engine you have installed).
 
-Second, install D4RL:
+Second, install minari:
 ```shell
-git clone https://github.com/Farama-Foundation/d4rl.git
-cd d4rl
+git clone https://github.com/Farama-Foundation/minari.git
+cd minari
 pip install -e .
 ```
 

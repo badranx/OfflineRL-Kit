@@ -2,7 +2,7 @@ import argparse
 import random
 
 import gymnasium as gym
-import d4rl
+import minari
 
 import numpy as np
 import torch
@@ -17,7 +17,7 @@ from offlinerlkit.policy import IQLPolicy
 
 """
 suggested hypers
-expectile=0.7, temperature=3.0 for all D4RL-Gym tasks
+expectile=0.7, temperature=3.0 for all minari-Gym tasks
 """
 
 
@@ -84,7 +84,7 @@ def normalize_rewards(dataset):
 def train(args=get_args()):
     # create env and dataset
     env = gym.make(args.task)
-    dataset = d4rl.qlearning_dataset(env)
+    dataset = minari.qlearning_dataset(env)
     if 'antmaze' in args.task:
         dataset["rewards"] -= 1.0
     if ("halfcheetah" in args.task or "walker2d" in args.task or "hopper" in args.task):

@@ -61,7 +61,7 @@ def get_args():
 
 
 def run_exp(config):
-    import d4rl
+    import minari
     # set config
     global args
     args_for_exp = vars(args)

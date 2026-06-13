@@ -2,7 +2,7 @@ import argparse
 import random
 
 import gymnasium as gym
-import d4rl
+import minari
 
 import numpy as np
 import torch
@@ -63,7 +63,7 @@ def get_args():
 def train(args=get_args()):
     # create env and dataset
     env = gym.make(args.task)
-    dataset = d4rl.qlearning_dataset(env)
+    dataset = minari.qlearning_dataset(env)
     if args.normalize_reward:
         mu, std = dataset["rewards"].mean(), dataset["rewards"].std()
         dataset["rewards"] = (dataset["rewards"] - mu) / (std + 1e-3)

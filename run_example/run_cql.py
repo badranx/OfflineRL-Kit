@@ -2,7 +2,7 @@ import argparse
 import random
 
 import gymnasium as gym
-import d4rl
+import minari
 
 import numpy as np
 import torch
@@ -18,7 +18,7 @@ from offlinerlkit.policy import CQLPolicy
 
 """
 suggested hypers
-cql-weight=5.0, temperature=1.0 for all D4RL-Gym tasks
+cql-weight=5.0, temperature=1.0 for all minari-Gym tasks
 """
 
 
@@ -58,8 +58,8 @@ def get_args():
 def train(args=get_args()):
     # create env and dataset
     env = gym.make(args.task)
-    dataset = d4rl.qlearning_dataset(env)
-    # See https://github.com/aviralkumar2907/CQL/blob/master/d4rl/examples/cql_antmaze_new.py#L22
+    dataset = minari.qlearning_dataset(env)
+    # See https://github.com/aviralkumar2907/CQL/blob/master/minari/examples/cql_antmaze_new.py#L22
     if 'antmaze' in args.task:
         dataset["rewards"] = (dataset["rewards"] - 0.5) * 4.0
     args.obs_shape = env.observation_space.shape

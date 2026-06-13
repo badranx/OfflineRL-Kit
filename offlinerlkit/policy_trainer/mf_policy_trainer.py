@@ -3,7 +3,7 @@ import os
 
 import numpy as np
 import torch
-import gym
+import gymnasium as gym
 
 from typing import Optional, Dict, List
 from tqdm import tqdm

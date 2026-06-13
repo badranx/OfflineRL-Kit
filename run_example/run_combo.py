@@ -3,8 +3,8 @@ import os
 import sys
 import random
 
-import gym
-import d4rl
+import gymnasium as gym
+import minari
 
 import numpy as np
 import torch
@@ -97,7 +97,7 @@ def train(args=get_args()):
     if 'hopper' in args.task or 'halfcheetah' in args.task or 'walker2d' in args.task:
         dataset = qlearning_dataset(env)
     else:
-        dataset = d4rl.qlearning_dataset(env)
+        dataset = minari.qlearning_dataset(env)
     args.obs_shape = env.observation_space.shape
     args.action_dim = np.prod(env.action_space.shape)
     args.max_action = env.action_space.high[0]

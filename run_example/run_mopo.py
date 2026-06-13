@@ -3,7 +3,7 @@ import os
 import sys
 import random
 
-import gym
+import gymnasium as gym
 import d4rl
 
 import numpy as np
